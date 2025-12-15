@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首爾極簡之旅 - 旅遊小工具</title>
+    <style>
+        /* 1. 基本設定與字體 */
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* 極淺灰背景 */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 2. 容器與手機優先設計 */
+        .container {
+            max-width: 600px; /* 模擬手機或平板寬度上限 */
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            min-height: 100vh;
+        }
+
+        /* 3. 標題與視覺風格 */
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: #f7f3e8; /* 淺米色/日式暖色調 */
+            border-bottom: 4px solid #ccab0a; /* 簡約線條 */
+        }
+        h1 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #333;
+        }
+        h2 {
+            font-size: 1.4em;
+            padding: 15px 20px 10px;
+            margin: 0;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin: 15px 0 10px;
+            padding-left: 10px;
+            border-left: 4px solid #ccab0a;
+        }
+        
+        /* 4. 行程卡片樣式 */
+        .day-card {
+            background-color: #fff;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+        .section-card {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #f0f0f0;
+            background-color: #fafafa;
+        }
+        
+        /* 5. 標籤與亮顯 */
+        .highlight {
+            font-weight: bold;
+            color: #d9534f; /* 紅色 - 重點/代號 */
+        }
+        .tag-food {
+            color: #ccab0a; /* 黃褐色 - 美食 */
+            font-weight: bold;
+        }
+        .tag-buy {
+            color: #4d9298; /* 青色 - 伴手禮 */
+            font-weight: bold;
+        }
+        
+        /* 6. 導航按鈕 */
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            background-color: #5bc0de; /* 藍色 - 導航 */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #46b8da;
+        }
+
+        /* 7. 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background-color: #f7f3e8;
+            font-weight: bold;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* 8. 其他工具區塊 */
+        .tool-box {
+            background-color: #f0f4f7; /* 淺藍色背景 */
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>✈️ 首爾極簡之旅 (3/30 - 4/5)</h1>
+        <p>手機優先旅行小工具</p>
+    </header>
+
+    <h2>📅 行程總覽</h2>
+    <div style="padding: 0 15px;">
+        <table>
+            <tr>
+                <th>日期</th>
+                <th>星期</th>
+                <th>主要活動</th>
+            </tr>
+            <tr>
+                <td>**3/30**</td>
+                <td>一</td>
+                <td>啟程、明洞住宿寄放行李、換錢</td>
+            </tr>
+            <tr>
+                <td>**3/31**</td>
+                <td>二</td>
+                <td>醫美、樂天世界、聖水洞</td>
+            </tr>
+            <tr>
+                <td>**4/1**</td>
+                <td>三</td>
+                <td>*待規劃*</td>
+            </tr>
+            <tr>
+                <td>**4/2**</td>
+                <td>四</td>
+                <td>退房/換飯店 (明洞→仁寺洞)</td>
+            </tr>
+            <tr>
+                <td>**4/3**</td>
+                <td>五</td>
+                <td>韓屋村、韓服體驗、廣藏市場</td>
+            </tr>
+            <tr>
+                <td>**4/4**</td>
+                <td>六</td>
+                <td>醫美、樂天世界、聖水洞 (重複日)</td>
+            </tr>
+            <tr>
+                <td>**4/5**</td>
+                <td>日</td>
+                <td>返家</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2>🗓️ 每日行程詳情</h2>
+
+    <div class="day-card">
+        <h3>☀️ 3/30 (一) - 首爾初印象 (明洞)</h3>
+        <p><strong>預計天氣：</strong> ☀️ **晴朗，6°C / 18°C** (實際請即時查詢)</p>
+        <p><strong>地點：</strong> 首爾市 (預計)</p>
+        
+        <div class="section-card">
+            <h4>🛫 交通卡</h4>
+            <table>
+                <tr><th>資訊</th><th>詳情</th><th>備註</th></tr>
+                <tr><td>**起飛**</td><td>KHH (高雄) 07:05</td><td>航程 2h55m</td></tr>
+                <tr><td>**抵達**</td><td>ICN2 (仁川 2航站) 11:00</td><td>抵達後取行李</td></tr>
+                <tr><td>**機場交通**</td><td>AREX直達列車 → 首爾站</td><td></td></tr>
+                <tr><td>**地鐵**</td><td>首爾站 → 明洞站</td><td></td></tr>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h4>🏠 住宿/辦理卡</h4>
+            <p><strong>地點:</strong> 明洞宜必思尚品酒店</p>
+            <ul>
+                <li>任務: <span class="highlight">寄放行李</span></li>
+            </ul>
+            <a href="https://maps.google.com/?q=明洞宜必思尚品酒店" class="nav-button" target="_blank">導航按鈕: 明洞宜必思尚品酒店</a>
+        </div>
+        
+        <div class="section-card">
+            <h4>💰 任務/換錢卡</h4>
+            <p><strong>地點:</strong> 明洞大使館換錢所</p>
+            <ul>
+                <li>攻略: 建議下午換匯，<span class="highlight">匯率通常較優</span>。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=明洞大使館換錢所" class="nav-button" target="_blank">導航按鈕: 大使館換錢所</a>
+        </div>
+
+        <div class="section-card">
+            <h4>🍚 午餐/美食卡</h4>
+            <p><strong>選擇 1:</strong> 烏達里家醬蟹</p>
+            <ul>
+                <li>導遊攻略: <span class="tag-food">必吃美食</span>：醬油螃蟹 (간장게장)。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=烏達里家醬蟹" class="nav-button" target="_blank">導航按鈕: 烏達里家醬蟹</a>
+            <p><strong>選擇 2:</strong> 百濟蔘雞湯</p>
+            <ul>
+                <li>導遊攻略: <span class="tag-food">必點菜單</span>：蔘雞湯 (삼계탕)，配上人蔘酒。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=百濟蔘雞湯" class="nav-button" target="_blank">導航按鈕: 百濟蔘雞湯</a>
+        </div>
+
+        <div class="section-card">
+            <h4>🛍️ 購物/逛街卡</h4>
+            <p><strong>地點:</strong> 明洞商圈</p>
+            <ul>
+                <li>攻略: 藥妝店 (Olive Young, LOHB's) <span class="tag-buy">必買伴手禮</span>：面膜、零食。</li>
+            </ul>
+            <p><strong>地點:</strong> 往南大門方向移動</p>
+            <a href="https://maps.google.com/?q=南大門市場" class="nav-button" target="_blank">導航按鈕: 南大門市場</a>
+        </div>
+    </div>
+    
+    <div class="day-card">
+        <h3>☁️ 3/31 (二) - 醫美與櫻花</h3>
+        <p><strong>預計天氣：</strong> ☁️ **多雲，5°C / 17°C** (實際請即時查詢)</p>
+        
+        <div class="section-card">
+            <h4>📝 預約/醫美卡 (<span class="highlight">重要預約代號</span>)</h4>
+            <p><strong>活動:</strong> 醫美療程</p>
+            <ul>
+                <li><span class="highlight">重要預約代號: [請填寫您的預約編號]</span></li>
+                <li>攻略: 建議攜帶護照，有些診所可現場退稅。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=醫美診所名稱" class="nav-button" target="_blank">導航按鈕: 醫美診所名稱</a>
+        </div>
+
+        <div class="section-card">
+            <h4>🌸 景點/賞櫻卡</h4>
+            <p><strong>地點:</strong> 樂天世界 (JAMSIL站)</p>
+            <ul>
+                <li>攻略: 樂天世界湖邊的**石村湖**是<span class="tag-food">必拍景點</span>，櫻花環繞 (賞櫻期請留意花況)。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=樂天世界+石村湖" class="nav-button" target="_blank">導航按鈕: 樂天世界/石村湖</a>
+        </div>
+        
+        <div class="section-card">
+            <h4>☕ 景點/文青卡</h4>
+            <p><strong>地點:</strong> 聖水洞</p>
+            <ul>
+                <li>導遊攻略: <span class="tag-buy">必買伴手禮</span>：DIOR聖水概念店/精品潮牌店、獨立設計師品牌。</li>
+            </ul>
+            <a href="https://maps.google.com/?q=聖水洞" class="nav-button" target="_blank">導航按鈕: 聖水洞</a>
+        </div>
+    </div>
+    
+    <div class="day-card">
+        <h3>🗓️ 4/1 (三) - 自由活動</h3>
+        <p>***此日行程待規劃***</p>
+    </div>
+
+    <div class="day-card">
+        <h3>🏨 4/2 (四) - 換飯店</h3>
+        <p><strong>活動:</strong> 宜必思退房，入住 DORMY INN (仁寺洞)</p>
+        <ul>
+            <li>**中午前**完成明洞宜必思退房。</li>
+            <li>移動至仁寺洞 DORMY INN 寄放行李或辦理入住。</li>
+        </ul>
+        <a href="https://maps.google.com/?q=DORMY INN 仁寺洞" class="nav-button" target="_blank">導航按鈕: DORMY INN (仁寺洞)</a>
+    </div>
+    
+    <div class="day-card">
+        <h3>🇰🇷 4/3 (五) - 韓屋與市場</h3>
+        <p><strong>活動:</strong> 早餐-倫敦貝果博物館 -> 三清洞韓屋村、韓服體驗 -> 廣藏市場</p>
+        <a href="https://maps.google.com/?q=倫敦貝果博物館" class="nav-button" target="_blank">導航按鈕: 倫敦貝果博物館</a>
+        <a href="https://maps.google.com/?q=三清洞韓屋村" class="nav-button" target="_blank">導航按鈕: 三清洞韓屋村</a>
+        <a href="https://maps.google.com/?q=廣藏市場" class="nav-button" target="_blank">導航按鈕: 廣藏市場</a>
+    </div>
+    
+    <div class="day-card">
+        <h3>🔄 4/4 (六) - 重複日</h3>
+        <p>***重複 3/31 醫美、樂天世界、聖水洞行程***</p>
+    </div>
+    
+    <div class="day-card">
+        <h3>👋 4/5 (日) - 返家</h3>
+        <div class="section-card">
+            <h4>🛫 返程交通卡</h4>
+            <table>
+                <tr><th>資訊</th><th>詳情</th><th>備註</th></tr>
+                <tr><td>**起飛**</td><td>ICN2 (仁川 2航站) 12:05</td><td></td></tr>
+                <tr><td>**抵達**</td><td>KHH (高雄) 14:05</td><td>航程 3h</td></tr>
+                <tr><td>**機場交通**</td><td>AREX列車 → ICN2</td><td>請預留充裕時間</td></tr>
+            </table>
+        </div>
+    </div>
+    <hr style="margin: 20px 0;">
+
+    <h2>🛠️ 其他工具與資訊</h2>
+    <div class="tool-box">
+        <h3>✈️ 航班與住宿資訊</h3>
+        <h4>🛫 航班資訊</h4>
+        <table>
+            <tr><th>資訊</th><th>3/30 (去程)</th><th>4/5 (回程)</th></tr>
+            <tr><td>**航班編號**</td><td><span class="highlight">[請填寫]</span></td><td><span class="highlight">[請填寫]</span></td></tr>
+            <tr><td>**時間**</td><td>KHH 07:05 → ICN2 11:00</td><td>ICN2 12:05 → KHH 14:05</td></tr>
+        </table>
+
+        <h4>🏠 住宿資訊</h4>
+        <table>
+            <tr><th>日期</th><th>飯店名稱</th></tr>
+            <tr><td>**3/30 - 4/2**</td><td>明洞宜必思尚品酒店</td></tr>
+            <tr><td>**4/2 - 4/5**</td><td>DORMY INN (仁寺洞)</td></tr>
+            <tr><td colspan="2"><span class="highlight">**訂房代號:** [請填寫]</span></td></tr>
+        </table>
+        
+        <h3>☎️ 緊急聯絡電話</h3>
+        <ul>
+            <li>韓國觀光諮詢熱線 (中/英/日/韓): <span class="highlight">1330</span></li>
+            <li>緊急報警: <span class="highlight">112</span></li>
+            <li>緊急救護/消防: <span class="highlight">119</span></li>
+        </ul>
+        
+        <h3>💸 記帳/預算表</h3>
+        <p>請自行將此表格複製到您的筆記App或試算表中：</p>
+        <table>
+            <tr><th>項目</th><th>分類</th><th>韓元 (₩)</th><th>臺幣 (NTD)</th></tr>
+            <tr><td>AREX 直達車</td><td>交通</td><td></td><td></td></tr>
+            <tr><td>醬蟹午餐</td><td>餐飲</td><td></td><td></td></tr>
+            <tr><td>換錢 (匯率)</td><td>備註</td><td></td><td></td></tr>
+            <tr><td colspan="4">...</td></tr>
+        </table>
+    </div>
+    <footer style="text-align: center; padding: 20px; font-size: 0.8em; color: #aaa;">
+        © 2025 Seoul Minimal Trip Planner
+    </footer>
+
+</div>
+
+</body>
+</html>
